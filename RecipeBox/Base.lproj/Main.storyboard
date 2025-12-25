@@ -1,24 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gua-5Z-026">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--HomeVC-->
+        <scene sceneID="Yb1-G8-Hyv">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="HomeVC" id="K1A-kK-jlV" customClass="HomeVC" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uUo-GD-pdm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oaL-wc-tpU">
+                                <rect key="frame" x="0.0" y="172" width="393" height="563"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9xA-Ja-laB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P7h-My-geT" customClass="CustomRecipeCell" customModule="RecipeBox" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I8X-80-E2D">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWq-Xr-HQq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="140"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spagetti Carbonara" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-zf-3NI">
+                                                    <rect key="frame" x="0.0" y="143" width="170" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaI-Ya-vbk">
+                                                    <rect key="frame" x="130" y="8" width="32" height="32"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="Hjy-Fs-2Zc"/>
+                                                        <constraint firstAttribute="height" constant="32" id="Yx7-68-Dd8"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                                    </state>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                                        <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.14999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                            <color key="value" white="1" alpha="0.83057328345070425" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏱️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-vt-eAR">
+                                                    <rect key="frame" x="1" y="164" width="23" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★ 4.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpO-qr-YZr">
+                                                    <rect key="frame" x="123.33333333333333" y="164" width="45.666666666666671" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemYellowColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VHn-zf-3NI" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" id="507-Wc-xGz"/>
+                                                <constraint firstItem="CWq-Xr-HQq" firstAttribute="top" secondItem="I8X-80-E2D" secondAttribute="top" id="5sH-LE-x95"/>
+                                                <constraint firstItem="CWq-Xr-HQq" firstAttribute="height" secondItem="I8X-80-E2D" secondAttribute="height" multiplier="0.7" id="6SK-q7-yx8"/>
+                                                <constraint firstAttribute="trailing" secondItem="CWq-Xr-HQq" secondAttribute="trailing" id="GXk-8D-6R4"/>
+                                                <constraint firstItem="CWq-Xr-HQq" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" id="Hy7-19-OhB"/>
+                                                <constraint firstItem="LaI-Ya-vbk" firstAttribute="top" secondItem="I8X-80-E2D" secondAttribute="top" constant="8" id="MSF-Z9-7D2"/>
+                                                <constraint firstItem="Lc4-vt-eAR" firstAttribute="top" secondItem="VHn-zf-3NI" secondAttribute="bottom" id="ZUD-k5-1Ev"/>
+                                                <constraint firstItem="Lc4-vt-eAR" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" constant="1" id="aHE-7R-ueL"/>
+                                                <constraint firstAttribute="trailing" secondItem="VHn-zf-3NI" secondAttribute="trailing" id="dgp-Db-AyJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="zpO-qr-YZr" secondAttribute="trailing" constant="1" id="eLh-qU-Amr"/>
+                                                <constraint firstAttribute="trailing" secondItem="LaI-Ya-vbk" secondAttribute="trailing" constant="8" id="gAv-FP-1gx"/>
+                                                <constraint firstItem="VHn-zf-3NI" firstAttribute="top" secondItem="CWq-Xr-HQq" secondAttribute="bottom" constant="3" id="mNB-fZ-riq"/>
+                                                <constraint firstItem="zpO-qr-YZr" firstAttribute="top" secondItem="VHn-zf-3NI" secondAttribute="bottom" id="wPJ-3f-WMw"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="170" height="200"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds " value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity ">
+                                                <real key="value" value="0.12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                <size key="value" width="0.0" height="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="recipeCookingTimeLbl" destination="Lc4-vt-eAR" id="TjF-3k-DzM"/>
+                                            <outlet property="recipeImg" destination="CWq-Xr-HQq" id="wrV-RK-Dj4"/>
+                                            <outlet property="recipeNameLbl" destination="VHn-zf-3NI" id="jtJ-OZ-WAi"/>
+                                            <outlet property="recipeRatingLbl" destination="zpO-qr-YZr" id="mRw-xe-ngi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S3F-Am-gSt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oaL-wc-tpU" firstAttribute="leading" secondItem="S3F-Am-gSt" secondAttribute="leading" id="6ak-XE-Wgd"/>
+                            <constraint firstItem="oaL-wc-tpU" firstAttribute="top" secondItem="S3F-Am-gSt" secondAttribute="top" id="c4B-bM-XfE"/>
+                            <constraint firstItem="S3F-Am-gSt" firstAttribute="bottom" secondItem="oaL-wc-tpU" secondAttribute="bottom" id="dFK-Mr-iCL"/>
+                            <constraint firstItem="S3F-Am-gSt" firstAttribute="trailing" secondItem="oaL-wc-tpU" secondAttribute="trailing" id="fwu-UL-WzS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RecipeBox" style="browser" id="aEh-dY-67L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loI-3i-Qcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3716.7938931297708" y="-430.28169014084511"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="EU7-iO-AKT">
+            <objects>
+                <viewController title="SettingsVC" id="08O-Me-eNr" customClass="SettingsVC" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ry3-Kl-RDW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fi9-MB-VcH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hHo-Yw-Iuf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIk-Wu-UVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3715.2671755725191" y="1109.8591549295775"/>
+        </scene>
+        <!--FavoritesVC-->
+        <scene sceneID="dmL-AU-m0d">
+            <objects>
+                <viewController title="FavoritesVC" id="01j-s0-FlU" customClass="FavoritesVC" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kj7-QM-FYa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QyV-6K-iMZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IeP-wX-sEX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Oq-RB-QgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3750.3816793893129" y="315.49295774647891"/>
+        </scene>
+        <!--Cooking ModeVC-->
+        <scene sceneID="uZ9-3L-hMw">
+            <objects>
+                <viewController id="BJ2-iY-6zG" customClass="CookingModeVC" customModule="RecipeBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FBj-PO-EOU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AzG-NA-C6p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H89-dy-Xxz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4845" y="315"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sBQ-OB-cfZ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gua-5Z-026" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ra9-3p-7eF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ftf-Sh-OyP" kind="relationship" relationship="viewControllers" id="iUh-9f-vQl"/>
+                        <segue destination="EiL-9D-BYt" kind="relationship" relationship="viewControllers" id="DYJ-0U-53X"/>
+                        <segue destination="gEm-Lo-rua" kind="relationship" relationship="viewControllers" id="Tv5-Fj-Iit"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tlx-i7-giD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="383"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="l8n-1A-fas">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" id="ftf-Sh-OyP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="q1u-BV-yFc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CgG-wk-5G7">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K1A-kK-jlV" kind="relationship" relationship="rootViewController" id="O2s-xu-Zdu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHe-Qe-Zvh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790.0763358778627" y="-430.28169014084511"/>
+        </scene>
+        <!-- Favorites-->
+        <scene sceneID="DsL-wB-9Iy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EiL-9D-BYt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title=" Favorites" image="heart" catalog="system" selectedImage="heart" id="vqt-0P-rvj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HzQ-up-UiH">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="01j-s0-FlU" kind="relationship" relationship="rootViewController" id="ciA-Xu-DGl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssi-Me-io8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2823.6641221374043" y="315.49295774647891"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Tlb-bb-bLr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gEm-Lo-rua" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="lg1-w5-ujW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yGL-u7-d2a">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="08O-Me-eNr" kind="relationship" relationship="rootViewController" id="I27-Oa-Yrg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDo-o5-iyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788.5496183206105" y="1109.8591549295775"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157" width="683" height="512"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
