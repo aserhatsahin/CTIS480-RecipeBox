@@ -5,53 +5,53 @@
 //  Created by Ahmet Serhat Sahin on 25.12.2025.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
-/// Favorileri recipe.id bazlı tutar.
 final class FavoritesStore {
 
-    static let shared = FavoritesStore()
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    private init() {}
+    private func fetchData() -> [FavoriteRecipe] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoriteRecipe")
 
-    private let key = "favorite_recipe_ids"
-
-    /// Favori ID'leri set olarak döner.
-    private var favoriteIDs: Set<Int> {
-        get {
-            let arr = UserDefaults.standard.array(forKey: key) as? [Int] ?? []
-            return Set(arr)
-        }
-        set {
-            UserDefaults.standard.set(Array(newValue), forKey: key)
+        do {
+            let results = try context.fetch(fetchRequest)
+            return results as! [FavoriteRecipe]
+        } catch let error as NSError {
+            print("Could not fetch favorites \(error), \(error.userInfo)")
+            return []
         }
     }
 
-    /// İlgili recipe favori mi?
+    private func save() {
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Could not save favorites \(error), \(error.userInfo)")
+        }
+    }
+
     func isFavorite(id: Int) -> Bool {
-        favoriteIDs.contains(id)
+        let favorites = fetchData()
+        return favorites.contains { Int($0.recipeId) == id }
     }
 
-    /// Favori durumunu değiştirir (toggle).
     func toggleFavorite(id: Int) {
-        var set = favoriteIDs
-        if set.contains(id) {
-            set.remove(id)
-        } else {
-            set.insert(id)
+        let favorites = fetchData()
+
+        if let existing = favorites.first(where: { Int($0.recipeId) == id }) {
+            context.delete(existing)
+            save()
+            return
         }
-        favoriteIDs = set
 
-        // Diğer ekranlar (Favorites tab vs.) için haber ver.
-        NotificationCenter.default.post(name: .favoritesChanged, object: nil)
+        let fav = FavoriteRecipe(context: context)
+        fav.recipeId = Int64(id)
+        save()
     }
 
-    /// Tüm favori ID'leri
-    func allFavoriteIDs() -> [Int] {
-        Array(favoriteIDs)
+    func getFavoriteIDs() -> [Int] {
+        return fetchData().map { Int($0.recipeId) }
     }
-}
-
-extension Notification.Name {
-    static let favoritesChanged = Notification.Name("favoritesChanged")
 }

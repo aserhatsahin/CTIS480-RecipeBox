@@ -12,7 +12,7 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
 
     let ds = RecipesDataSource()
-    //let favoritesStore = FavoritesStore()
+    let favoritesStore = FavoritesStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +52,9 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
             print("Missing asset:", recipe.imageName)
         }
 
-        //let isFav = favoritesStore.isFavorite(id: recipe.id)
-        //let heartName = isFav ? "heart.fill" : "heart"
-        //cell.favoriteBtn.setImage(UIImage(systemName: heartName), for: .normal)
+        let isFav = favoritesStore.isFavorite(id: recipe.id)
+        let heartName = isFav ? "heart.fill" : "heart"
+        cell.favoriteBtn.setImage(UIImage(systemName: heartName), for: .normal)
 
         cell.favoriteBtn.tag = indexPath.item
 
@@ -68,7 +68,7 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         let index = sender.tag
         let recipe = ds.recipes[index]
 
-        //favoritesStore.toggleFavorite(id: recipe.id)
+        favoritesStore.toggleFavorite(id: recipe.id)
 
         collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
