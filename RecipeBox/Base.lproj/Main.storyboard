@@ -19,29 +19,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oaL-wc-tpU">
-                                <rect key="frame" x="0.0" y="172" width="393" height="563"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oaL-wc-tpU">
+                                <rect key="frame" x="17" y="172" width="359" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9xA-Ja-laB">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9xA-Ja-laB">
+                                    <size key="itemSize" width="170" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P7h-My-geT" customClass="CustomRecipeCell" customModule="RecipeBox" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomRecipeCell" id="P7h-My-geT" customClass="CustomRecipeCell" customModule="RecipeBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I8X-80-E2D">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWq-Xr-HQq">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken_alfredo" id="CWq-Xr-HQq">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="140"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spagetti Carbonara" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-zf-3NI">
-                                                    <rect key="frame" x="0.0" y="143" width="170" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spagetti Carbonara" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-zf-3NI">
+                                                    <rect key="frame" x="0.0" y="145" width="170" height="21.333333333333343"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -80,34 +87,42 @@
                                                             <color key="value" white="1" alpha="0.83057328345070425" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="favoriteTapped:" destination="P7h-My-geT" eventType="touchUpInside" id="rM5-E1-pae"/>
+                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⏱️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-vt-eAR">
-                                                    <rect key="frame" x="1" y="164" width="23" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bbb" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpO-qr-YZr">
+                                                    <rect key="frame" x="140" y="171.33333333333334" width="25" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="systemYellowColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★ 4.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpO-qr-YZr">
-                                                    <rect key="frame" x="123.33333333333333" y="164" width="45.666666666666671" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemYellowColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aaaa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-vt-eAR">
+                                                    <rect key="frame" x="4.9999999999999982" y="171.33333333333334" width="30.333333333333329" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="VHn-zf-3NI" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" id="507-Wc-xGz"/>
                                                 <constraint firstItem="CWq-Xr-HQq" firstAttribute="top" secondItem="I8X-80-E2D" secondAttribute="top" id="5sH-LE-x95"/>
-                                                <constraint firstItem="CWq-Xr-HQq" firstAttribute="height" secondItem="I8X-80-E2D" secondAttribute="height" multiplier="0.7" id="6SK-q7-yx8"/>
+                                                <constraint firstAttribute="trailing" secondItem="zpO-qr-YZr" secondAttribute="trailing" constant="5" id="Ecq-cr-DRJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="CWq-Xr-HQq" secondAttribute="trailing" id="GXk-8D-6R4"/>
                                                 <constraint firstItem="CWq-Xr-HQq" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" id="Hy7-19-OhB"/>
                                                 <constraint firstItem="LaI-Ya-vbk" firstAttribute="top" secondItem="I8X-80-E2D" secondAttribute="top" constant="8" id="MSF-Z9-7D2"/>
-                                                <constraint firstItem="Lc4-vt-eAR" firstAttribute="top" secondItem="VHn-zf-3NI" secondAttribute="bottom" id="ZUD-k5-1Ev"/>
-                                                <constraint firstItem="Lc4-vt-eAR" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" constant="1" id="aHE-7R-ueL"/>
+                                                <constraint firstItem="zpO-qr-YZr" firstAttribute="top" secondItem="VHn-zf-3NI" secondAttribute="bottom" constant="5" id="OC1-dv-pzi"/>
+                                                <constraint firstItem="Lc4-vt-eAR" firstAttribute="leading" secondItem="I8X-80-E2D" secondAttribute="leading" constant="5" id="W7J-CA-upo"/>
+                                                <constraint firstItem="Lc4-vt-eAR" firstAttribute="top" secondItem="VHn-zf-3NI" secondAttribute="bottom" constant="5" id="ZbQ-TJ-cv1"/>
                                                 <constraint firstAttribute="trailing" secondItem="VHn-zf-3NI" secondAttribute="trailing" id="dgp-Db-AyJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="zpO-qr-YZr" secondAttribute="trailing" constant="1" id="eLh-qU-Amr"/>
                                                 <constraint firstAttribute="trailing" secondItem="LaI-Ya-vbk" secondAttribute="trailing" constant="8" id="gAv-FP-1gx"/>
-                                                <constraint firstItem="VHn-zf-3NI" firstAttribute="top" secondItem="CWq-Xr-HQq" secondAttribute="bottom" constant="3" id="mNB-fZ-riq"/>
-                                                <constraint firstItem="zpO-qr-YZr" firstAttribute="top" secondItem="VHn-zf-3NI" secondAttribute="bottom" id="wPJ-3f-WMw"/>
+                                                <constraint firstItem="VHn-zf-3NI" firstAttribute="top" secondItem="CWq-Xr-HQq" secondAttribute="bottom" constant="5" id="mNB-fZ-riq"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -118,7 +133,7 @@
                                                     <real key="value" value="0.5"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
@@ -139,6 +154,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="favoriteBtn" destination="LaI-Ya-vbk" id="s9G-XW-YbV"/>
                                             <outlet property="recipeCookingTimeLbl" destination="Lc4-vt-eAR" id="TjF-3k-DzM"/>
                                             <outlet property="recipeImg" destination="CWq-Xr-HQq" id="wrV-RK-Dj4"/>
                                             <outlet property="recipeNameLbl" destination="VHn-zf-3NI" id="jtJ-OZ-WAi"/>
@@ -151,13 +167,16 @@
                         <viewLayoutGuide key="safeArea" id="S3F-Am-gSt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oaL-wc-tpU" firstAttribute="leading" secondItem="S3F-Am-gSt" secondAttribute="leading" id="6ak-XE-Wgd"/>
+                            <constraint firstItem="oaL-wc-tpU" firstAttribute="leading" secondItem="S3F-Am-gSt" secondAttribute="leading" constant="17" id="6ak-XE-Wgd"/>
                             <constraint firstItem="oaL-wc-tpU" firstAttribute="top" secondItem="S3F-Am-gSt" secondAttribute="top" id="c4B-bM-XfE"/>
                             <constraint firstItem="S3F-Am-gSt" firstAttribute="bottom" secondItem="oaL-wc-tpU" secondAttribute="bottom" id="dFK-Mr-iCL"/>
-                            <constraint firstItem="S3F-Am-gSt" firstAttribute="trailing" secondItem="oaL-wc-tpU" secondAttribute="trailing" id="fwu-UL-WzS"/>
+                            <constraint firstItem="S3F-Am-gSt" firstAttribute="trailing" secondItem="oaL-wc-tpU" secondAttribute="trailing" constant="17" id="fwu-UL-WzS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="RecipeBox" style="browser" id="aEh-dY-67L"/>
+                    <navigationItem key="navigationItem" title="RecipeBox" largeTitleDisplayMode="always" style="browser" id="aEh-dY-67L"/>
+                    <connections>
+                        <outlet property="collectionView" destination="oaL-wc-tpU" id="bUw-3b-n9Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loI-3i-Qcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -679,8 +698,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157" width="683" height="512"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="chicken_alfredo" width="1500" height="1125"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
