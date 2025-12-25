@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RecipeBox/Model/FavoriteRecipe+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:RecipeBox/Model/FavoriteRecipe+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:RecipeBox.xcodeproj">
    </FileRef>
    <FileRef
