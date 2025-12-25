@@ -6,25 +6,33 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 final class RecipesDataSource {
+    var recipes: [Recipe] = []
 
-    private(set) var allRecipes: [Recipe] = []
-    private(set) var visibleRecipes: [Recipe] = []
+    func populateFromJSON() {
+        recipes.removeAll()
 
-    func setRecipes(_ recipes: [Recipe]) {
-        self.allRecipes = recipes
-        self.visibleRecipes = recipes
-    }
+        let urlString = "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/refs/heads/develop/recipes.json"
 
-    func search(query: String) {
-        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if let url = URL(string: urlString) {
+            if let data = try? Data(contentsOf: url) {
 
-        guard !q.isEmpty else {
-            visibleRecipes = allRecipes
-            return
+                guard let json = try? JSON(data: data) else {
+                    print("JSON parse error")
+                    return
+                }
+
+                for i in 0..<json["recipes"].count {
+                    let recipeJSON = json["recipes"][i]
+                    let recipe = Recipe(json: recipeJSON)
+                    recipes.append(recipe)
+                }
+
+            } else {
+                print("Data download error")
+            }
         }
-
-        visibleRecipes = allRecipes.filter { $0.title.lowercased().contains(q) }
     }
 }

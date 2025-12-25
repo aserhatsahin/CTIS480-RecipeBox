@@ -11,12 +11,8 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    private let service = RecipeService()
-    private let dataSource = RecipesDataSource()
-    private let favorites = FavoritesStore.shared
-
-    private let recipesURL =
-    "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/refs/heads/develop/recipes.json"
+    let ds = RecipesDataSource()
+    //let favoritesStore = FavoritesStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,69 +20,60 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        fetchAndReload()
+        ds.populateFromJSON()
 
-        // Favorites değişince UI güncelle (FavoritesVC vs. ile senkron)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(favoritesChanged),
-                                               name: .favoritesChanged,
-                                               object: nil)
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    private func fetchAndReload() {
-        service.fetchRecipes(from: recipesURL) { [weak self] result in
-            guard let self = self else { return }
-
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let recipes):
-                    self.dataSource.setRecipes(recipes)
-                    self.collectionView.reloadData()
-
-                case .failure(let error):
-                    print("fetch error:", error)
-                }
-            }
-        }
-    }
-
-    @objc private func favoritesChanged() {
         collectionView.reloadData()
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.visibleRecipes.count
+        return ds.recipes.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomRecipeCell",
-                                                            for: indexPath) as? CustomRecipeCell
-        else { return UICollectionViewCell() }
-
-        let recipe = dataSource.visibleRecipes[indexPath.item]
-        let isFav = favorites.isFavorite(id: recipe.id)
-
-        cell.configure(with: recipe, isFavorite: isFav)
-
-        cell.onFavoriteTapped = { [weak self, weak collectionView] in
-            guard let self = self, let collectionView = collectionView else { return }
-
-            self.favorites.toggleFavorite(id: recipe.id)
-
-            // UI’ı sadece ilgili item için yenile
-            collectionView.reloadItems(at: [indexPath])
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "CustomRecipeCell",
+            for: indexPath
+        ) as? CustomRecipeCell else {
+            return UICollectionViewCell()
         }
+
+        let recipe = ds.recipes[indexPath.item]
+
+        cell.recipeNameLbl.text = recipe.title
+        cell.recipeCookingTimeLbl.text = "⏱️ \(recipe.durationMinutes) min"
+        cell.recipeRatingLbl.text = "★ \(String(format: "%.1f", recipe.mockRating))"
+
+        if let img = UIImage(named: recipe.imageName) {
+            cell.recipeImg.image = img
+        } else {
+            cell.recipeImg.image = UIImage(named: "placeholder") // varsa
+            print("Missing asset:", recipe.imageName)
+        }
+
+        //let isFav = favoritesStore.isFavorite(id: recipe.id)
+        //let heartName = isFav ? "heart.fill" : "heart"
+        //cell.favoriteBtn.setImage(UIImage(systemName: heartName), for: .normal)
+
+        cell.favoriteBtn.tag = indexPath.item
+
+        cell.favoriteBtn.removeTarget(nil, action: nil, for: .allEvents)
+        cell.favoriteBtn.addTarget(self, action: #selector(favoriteTapped(_:)), for: .touchUpInside)
 
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    @objc private func favoriteTapped(_ sender: UIButton) {
+        let index = sender.tag
+        let recipe = ds.recipes[index]
+
+        //favoritesStore.toggleFavorite(id: recipe.id)
+
+        collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
 }
