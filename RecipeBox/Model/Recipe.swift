@@ -5,10 +5,12 @@
 //  Created by Ahmet Serhat Sahin on 25.12.2025.
 //
 
-import Foundation
 
-final class Recipe {
-    let id: String
+import Foundation
+import SwiftyJSON
+
+struct Recipe {
+    let id: Int
     let title: String
     let category: String
     let durationMinutes: Int
@@ -16,24 +18,20 @@ final class Recipe {
     let summary: String
     let ingredients: [String]
     let steps: [String]
-    
-    init(
-        id: String,
-        title: String,
-        category: String,
-        durationMinutes: Int,
-        imageName: String,
-        summary: String,
-        ingredients: [String],
-        steps: [String]
-    ) {
-        self.id = id
-        self.title = title
-        self.category = category
-        self.durationMinutes = durationMinutes
-        self.imageName = imageName
-        self.summary = summary
-        self.ingredients = ingredients
-        self.steps = steps
+
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.title = json["title"].stringValue
+        self.category = json["category"].stringValue
+        self.durationMinutes = json["durationMinutes"].intValue
+        self.imageName = json["imageName"].stringValue
+        self.summary = json["summary"].stringValue
+        self.ingredients = json["ingredients"].arrayValue.map { $0.stringValue }
+        self.steps = json["steps"].arrayValue.map { $0.stringValue }
+    }
+
+    var mockRating: Double {
+        let base = 45 + (id % 5) // 4.5 - 4.9
+        return Double(base) / 10.0
     }
 }
