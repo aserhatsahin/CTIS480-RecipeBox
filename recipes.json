@@ -1,0 +1,70 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Avocado Toast",
+      "category": "Breakfast",
+      "summary": "Crispy toast topped with creamy avocado and a fresh finish.",
+      "durationMinutes": 8,
+      "servings": 1,
+      "ingredients": ["2 slices bread","1 ripe avocado","1 tsp lemon juice","Salt","Black pepper","Chili flakes (optional)","Olive oil (optional)"],
+      "steps": ["Toast the bread until golden and crispy.","Mash the avocado with lemon juice, salt, and pepper.","Spread the avocado mixture on toast.","Top with chili flakes and a tiny drizzle of olive oil if you want."],
+      "imageName": "avacado_toast"
+    },
+    {
+      "id": 2,
+      "title": "Chicken Alfredo",
+      "category": "Dinner",
+      "summary": "Creamy Alfredo pasta with tender chicken.",
+      "durationMinutes": 30,
+      "servings": 2,
+      "ingredients": ["200g pasta (fettuccine or penne)","200g chicken breast","1 tbsp butter","2 cloves garlic","200ml cream","40g parmesan","Salt","Black pepper"],
+      "steps": ["Boil pasta in salted water and drain.","Season and cook chicken; slice it.","Melt butter, sauté garlic for 30 seconds.","Add cream, simmer 2-3 minutes, then mix in parmesan.","Combine pasta with sauce, add chicken on top and serve."],
+      "imageName": "chicken_alfredo"
+    },
+    {
+      "id": 3,
+      "title": "Greek Salad",
+      "category": "Salad",
+      "summary": "Fresh, crunchy, and classic Mediterranean flavors.",
+      "durationMinutes": 10,
+      "servings": 2,
+      "ingredients": ["2 tomatoes (chopped)","1 cucumber (sliced)","1/2 red onion (thinly sliced)","1/2 cup olives","80g feta cheese","2 tbsp olive oil","1 tbsp lemon juice","Oregano","Salt","Black pepper"],
+      "steps": ["Chop tomatoes and cucumber, slice onion.","Add olives and crumble feta on top.","Mix olive oil, lemon juice, oregano, salt, pepper.","Pour dressing and toss gently."],
+      "imageName": "greek_salad"
+    },
+    {
+      "id": 4,
+      "title": "Chocolate Mug Cake",
+      "category": "Dessert",
+      "summary": "Quick single-serve chocolate cake made in a mug.",
+      "durationMinutes": 7,
+      "servings": 1,
+      "ingredients": ["4 tbsp flour","2 tbsp cocoa powder","2 tbsp sugar","1/4 tsp baking powder","3 tbsp milk","2 tbsp oil","1/4 tsp vanilla (optional)","Chocolate chips (optional)"],
+      "steps": ["Mix flour, cocoa, sugar, baking powder in a mug.","Add milk and oil, mix until smooth.","Add chocolate chips if you want.","Microwave 60-90 seconds (watch it so it doesn’t overflow)."],
+      "imageName": "mug_cake"
+    },
+    {
+      "id": 5,
+      "title": "Classic Pancakes",
+      "category": "Breakfast",
+      "summary": "Fluffy pancakes perfect with syrup and fruit.",
+      "durationMinutes": 20,
+      "servings": 2,
+      "ingredients": ["1 cup flour","1 tbsp sugar","1 tsp baking powder","1/2 tsp baking soda","Pinch of salt","1 cup milk","1 egg","1 tbsp melted butter"],
+      "steps": ["Mix dry ingredients in a bowl.","Whisk milk, egg, melted butter separately.","Combine wet + dry; don’t overmix (small lumps OK).","Cook on a lightly oiled pan: 2-3 minutes per side."],
+      "imageName": "pancakes"
+    },
+    {
+      "id": 6,
+      "title": "Tomato Soup",
+      "category": "Soup",
+      "summary": "Smooth and comforting tomato soup.",
+      "durationMinutes": 30,
+      "servings": 3,
+      "ingredients": ["1 tbsp olive oil","1 onion (chopped)","2 cloves garlic","500g tomatoes (or 1 can crushed tomatoes)","2 cups vegetable/chicken stock","Salt","Black pepper","Cream (optional)"],
+      "steps": ["Sauté onion in olive oil until soft.","Add garlic, cook 30 seconds.","Add tomatoes and stock, simmer 15-20 minutes.","Blend until smooth, season with salt and pepper.","Optional: add a small splash of cream."],
+      "imageName": "tomato_soup"
+    }
+  ]
+}
