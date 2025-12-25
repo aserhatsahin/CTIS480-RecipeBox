@@ -2,151 +2,156 @@
   "recipes": [
     {
       "id": 1,
-      "title": "Creamy Chicken Alfredo",
-      "category": "Main",
-      "imageName": "recipe_alfredo",
-      "timeMinutes": 25,
-      "servings": 2,
-      "difficulty": "Easy",
-      "shortDescription": "Creamy parmesan Alfredo with sautéed chicken.",
+      "title": "Avocado Toast",
+      "category": "Breakfast",
+      "summary": "Crispy toast topped with creamy avocado and a fresh finish.",
+      "durationMinutes": 8,
+      "servings": 1,
       "ingredients": [
-        "200g fettuccine",
-        "200g chicken breast",
-        "200ml heavy cream",
-        "30g parmesan",
-        "1 garlic clove",
-        "Salt, black pepper"
+        "2 slices bread",
+        "1 ripe avocado",
+        "1 tsp lemon juice",
+        "Salt",
+        "Black pepper",
+        "Chili flakes (optional)",
+        "Olive oil (optional)"
       ],
       "steps": [
-        { "order": 1, "text": "Boil pasta in salted water.", "seconds": 600 },
-        { "order": 2, "text": "Sauté diced chicken until cooked through.", "seconds": 420 },
-        { "order": 3, "text": "Add garlic and cream, simmer until slightly thick.", "seconds": 240 },
-        { "order": 4, "text": "Stir in parmesan, toss pasta with sauce.", "seconds": 120 }
+        "Toast the bread until golden and crispy.",
+        "Mash the avocado with lemon juice, salt, and pepper.",
+        "Spread the avocado mixture on toast.",
+        "Top with chili flakes and a tiny drizzle of olive oil if you want."
       ],
-      "tags": ["Pasta", "Creamy", "Quick"]
+      "imageUrl": "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/develop/RecipeBox/data/images/avacado_toast.jpg"
     },
     {
       "id": 2,
-      "title": "Classic Smash Burger",
-      "category": "Main",
-      "imageName": "recipe_burger",
-      "timeMinutes": 15,
+      "title": "Chicken Alfredo",
+      "category": "Dinner",
+      "summary": "Creamy Alfredo pasta with tender chicken.",
+      "durationMinutes": 30,
       "servings": 2,
-      "difficulty": "Easy",
-      "shortDescription": "Crispy-edged smash burgers with melted cheese.",
       "ingredients": [
-        "300g ground beef (80/20)",
-        "2 burger buns",
-        "2 cheese slices",
-        "Salt, black pepper",
-        "Pickles",
-        "Burger sauce"
+        "200g pasta (fettuccine or penne)",
+        "200g chicken breast",
+        "1 tbsp butter",
+        "2 cloves garlic",
+        "200ml cream",
+        "40g parmesan",
+        "Salt",
+        "Black pepper"
       ],
       "steps": [
-        { "order": 1, "text": "Heat a pan/griddle until very hot.", "seconds": 180 },
-        { "order": 2, "text": "Form beef into 2 loose balls and smash in the pan.", "seconds": 60 },
-        { "order": 3, "text": "Season and cook until edges are crispy, then flip.", "seconds": 180 },
-        { "order": 4, "text": "Add cheese, toast buns, assemble and serve.", "seconds": 120 }
+        "Boil pasta in salted water and drain.",
+        "Season and cook chicken; slice it.",
+        "Melt butter, sauté garlic for 30 seconds.",
+        "Add cream, simmer 2-3 minutes, then mix in parmesan.",
+        "Combine pasta with sauce, add chicken on top and serve."
       ],
-      "tags": ["Burger", "Fast", "Comfort"]
+      "imageUrl": "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/develop/RecipeBox/data/images/chicken_alfredo.jpg"
     },
     {
       "id": 3,
-      "title": "Avocado Toast",
-      "category": "Breakfast",
-      "imageName": "recipe_avocado_toast",
-      "timeMinutes": 10,
-      "servings": 1,
-      "difficulty": "Easy",
-      "shortDescription": "A quick, healthy toast topped with creamy avocado.",
+      "title": "Greek Salad",
+      "category": "Salad",
+      "summary": "Fresh, crunchy, and classic Mediterranean flavors.",
+      "durationMinutes": 10,
+      "servings": 2,
       "ingredients": [
-        "1 slice sourdough bread",
-        "1 ripe avocado",
-        "Salt, pepper",
-        "Lemon juice",
-        "Chili flakes (optional)"
+        "2 tomatoes (chopped)",
+        "1 cucumber (sliced)",
+        "1/2 red onion (thinly sliced)",
+        "1/2 cup olives",
+        "80g feta cheese",
+        "2 tbsp olive oil",
+        "1 tbsp lemon juice",
+        "Oregano",
+        "Salt",
+        "Black pepper"
       ],
       "steps": [
-        { "order": 1, "text": "Toast the bread until golden.", "seconds": 120 },
-        { "order": 2, "text": "Mash avocado with salt, pepper, and lemon.", "seconds": 90 },
-        { "order": 3, "text": "Spread on toast and finish with chili flakes.", "seconds": 30 }
+        "Chop tomatoes and cucumber, slice onion.",
+        "Add olives and crumble feta on top.",
+        "Mix olive oil, lemon juice, oregano, salt, pepper.",
+        "Pour dressing and toss gently."
       ],
-      "tags": ["Healthy", "Quick", "Vegetarian"]
+      "imageUrl": "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/develop/RecipeBox/data/images/greek_salad.jpg"
     },
     {
       "id": 4,
-      "title": "Honey Garlic Salmon",
-      "category": "Main",
-      "imageName": "recipe_salmon",
-      "timeMinutes": 20,
-      "servings": 2,
-      "difficulty": "Medium",
-      "shortDescription": "Sticky honey-garlic glaze over tender salmon.",
+      "title": "Chocolate Mug Cake",
+      "category": "Dessert",
+      "summary": "Quick single-serve chocolate cake made in a mug.",
+      "durationMinutes": 7,
+      "servings": 1,
       "ingredients": [
-        "2 salmon fillets",
-        "2 tbsp honey",
-        "2 tbsp soy sauce",
-        "2 garlic cloves",
-        "1 tsp sesame oil",
-        "Lemon wedges"
+        "4 tbsp flour",
+        "2 tbsp cocoa powder",
+        "2 tbsp sugar",
+        "1/4 tsp baking powder",
+        "3 tbsp milk",
+        "2 tbsp oil",
+        "1/4 tsp vanilla (optional)",
+        "Chocolate chips (optional)"
       ],
       "steps": [
-        { "order": 1, "text": "Preheat oven to 200°C (400°F).", "seconds": 180 },
-        { "order": 2, "text": "Mix honey, soy sauce, garlic, and sesame oil.", "seconds": 60 },
-        { "order": 3, "text": "Brush glaze on salmon and bake until cooked.", "seconds": 720 },
-        { "order": 4, "text": "Brush again, rest briefly, and serve with lemon.", "seconds": 60 }
+        "Mix flour, cocoa, sugar, baking powder in a mug.",
+        "Add milk and oil, mix until smooth.",
+        "Add chocolate chips if you want.",
+        "Microwave 60-90 seconds (watch it so it doesn’t overflow)."
       ],
-      "tags": ["Seafood", "Quick", "High Protein"]
+      "imageUrl": "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/develop/RecipeBox/data/images/mug_cake.jpg"
     },
     {
       "id": 5,
-      "title": "Mediterranean Quinoa Bowl",
-      "category": "Lunch",
-      "imageName": "recipe_quinoa_bowl",
-      "timeMinutes": 30,
-      "servings": 2,
-      "difficulty": "Easy",
-      "shortDescription": "Fresh veggies, feta, and quinoa with lemon dressing.",
-      "ingredients": [
-        "1 cup quinoa",
-        "Cherry tomatoes",
-        "Cucumber",
-        "Feta cheese",
-        "Olives",
-        "Olive oil, lemon juice"
-      ],
-      "steps": [
-        { "order": 1, "text": "Cook quinoa and let it cool slightly.", "seconds": 900 },
-        { "order": 2, "text": "Chop tomatoes and cucumber; slice olives.", "seconds": 300 },
-        { "order": 3, "text": "Mix lemon juice and olive oil for dressing.", "seconds": 60 },
-        { "order": 4, "text": "Combine everything and top with feta.", "seconds": 120 }
-      ],
-      "tags": ["Healthy", "Vegetarian", "Meal Prep"]
-    },
-    {
-      "id": 6,
-      "title": "Fluffy Pancakes",
+      "title": "Classic Pancakes",
       "category": "Breakfast",
-      "imageName": "recipe_pancakes",
-      "timeMinutes": 20,
+      "summary": "Fluffy pancakes perfect with syrup and fruit.",
+      "durationMinutes": 20,
       "servings": 2,
-      "difficulty": "Easy",
-      "shortDescription": "Soft, fluffy pancakes perfect with maple syrup.",
       "ingredients": [
         "1 cup flour",
         "1 tbsp sugar",
         "1 tsp baking powder",
-        "1 egg",
+        "1/2 tsp baking soda",
+        "Pinch of salt",
         "1 cup milk",
-        "1 tbsp butter (melted)"
+        "1 egg",
+        "1 tbsp melted butter"
       ],
       "steps": [
-        { "order": 1, "text": "Whisk dry ingredients in a bowl.", "seconds": 60 },
-        { "order": 2, "text": "Whisk wet ingredients, then combine gently.", "seconds": 90 },
-        { "order": 3, "text": "Cook pancakes on a lightly oiled pan.", "seconds": 600 },
-        { "order": 4, "text": "Serve warm with syrup or fruit.", "seconds": 60 }
+        "Mix dry ingredients in a bowl.",
+        "Whisk milk, egg, melted butter separately.",
+        "Combine wet + dry; don’t overmix (small lumps OK).",
+        "Cook on a lightly oiled pan: 2-3 minutes per side."
       ],
-      "tags": ["Sweet", "Brunch", "Comfort"]
+      "imageUrl": "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/develop/RecipeBox/data/images/pancakes.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Tomato Soup",
+      "category": "Soup",
+      "summary": "Smooth and comforting tomato soup.",
+      "durationMinutes": 30,
+      "servings": 3,
+      "ingredients": [
+        "1 tbsp olive oil",
+        "1 onion (chopped)",
+        "2 cloves garlic",
+        "500g tomatoes (or 1 can crushed tomatoes)",
+        "2 cups vegetable/chicken stock",
+        "Salt",
+        "Black pepper",
+        "Cream (optional)"
+      ],
+      "steps": [
+        "Sauté onion in olive oil until soft.",
+        "Add garlic, cook 30 seconds.",
+        "Add tomatoes and stock, simmer 15-20 minutes.",
+        "Blend until smooth, season with salt and pepper.",
+        "Optional: add a small splash of cream."
+      ],
+      "imageUrl": "https://raw.githubusercontent.com/aserhatsahin/CTIS480-RecipeBox/develop/RecipeBox/data/images/tomato_soup.jpg"
     }
   ]
 }
