@@ -1,0 +1,152 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Creamy Chicken Alfredo",
+      "category": "Main",
+      "imageName": "recipe_alfredo",
+      "timeMinutes": 25,
+      "servings": 2,
+      "difficulty": "Easy",
+      "shortDescription": "Creamy parmesan Alfredo with sautéed chicken.",
+      "ingredients": [
+        "200g fettuccine",
+        "200g chicken breast",
+        "200ml heavy cream",
+        "30g parmesan",
+        "1 garlic clove",
+        "Salt, black pepper"
+      ],
+      "steps": [
+        { "order": 1, "text": "Boil pasta in salted water.", "seconds": 600 },
+        { "order": 2, "text": "Sauté diced chicken until cooked through.", "seconds": 420 },
+        { "order": 3, "text": "Add garlic and cream, simmer until slightly thick.", "seconds": 240 },
+        { "order": 4, "text": "Stir in parmesan, toss pasta with sauce.", "seconds": 120 }
+      ],
+      "tags": ["Pasta", "Creamy", "Quick"]
+    },
+    {
+      "id": 2,
+      "title": "Classic Smash Burger",
+      "category": "Main",
+      "imageName": "recipe_burger",
+      "timeMinutes": 15,
+      "servings": 2,
+      "difficulty": "Easy",
+      "shortDescription": "Crispy-edged smash burgers with melted cheese.",
+      "ingredients": [
+        "300g ground beef (80/20)",
+        "2 burger buns",
+        "2 cheese slices",
+        "Salt, black pepper",
+        "Pickles",
+        "Burger sauce"
+      ],
+      "steps": [
+        { "order": 1, "text": "Heat a pan/griddle until very hot.", "seconds": 180 },
+        { "order": 2, "text": "Form beef into 2 loose balls and smash in the pan.", "seconds": 60 },
+        { "order": 3, "text": "Season and cook until edges are crispy, then flip.", "seconds": 180 },
+        { "order": 4, "text": "Add cheese, toast buns, assemble and serve.", "seconds": 120 }
+      ],
+      "tags": ["Burger", "Fast", "Comfort"]
+    },
+    {
+      "id": 3,
+      "title": "Avocado Toast",
+      "category": "Breakfast",
+      "imageName": "recipe_avocado_toast",
+      "timeMinutes": 10,
+      "servings": 1,
+      "difficulty": "Easy",
+      "shortDescription": "A quick, healthy toast topped with creamy avocado.",
+      "ingredients": [
+        "1 slice sourdough bread",
+        "1 ripe avocado",
+        "Salt, pepper",
+        "Lemon juice",
+        "Chili flakes (optional)"
+      ],
+      "steps": [
+        { "order": 1, "text": "Toast the bread until golden.", "seconds": 120 },
+        { "order": 2, "text": "Mash avocado with salt, pepper, and lemon.", "seconds": 90 },
+        { "order": 3, "text": "Spread on toast and finish with chili flakes.", "seconds": 30 }
+      ],
+      "tags": ["Healthy", "Quick", "Vegetarian"]
+    },
+    {
+      "id": 4,
+      "title": "Honey Garlic Salmon",
+      "category": "Main",
+      "imageName": "recipe_salmon",
+      "timeMinutes": 20,
+      "servings": 2,
+      "difficulty": "Medium",
+      "shortDescription": "Sticky honey-garlic glaze over tender salmon.",
+      "ingredients": [
+        "2 salmon fillets",
+        "2 tbsp honey",
+        "2 tbsp soy sauce",
+        "2 garlic cloves",
+        "1 tsp sesame oil",
+        "Lemon wedges"
+      ],
+      "steps": [
+        { "order": 1, "text": "Preheat oven to 200°C (400°F).", "seconds": 180 },
+        { "order": 2, "text": "Mix honey, soy sauce, garlic, and sesame oil.", "seconds": 60 },
+        { "order": 3, "text": "Brush glaze on salmon and bake until cooked.", "seconds": 720 },
+        { "order": 4, "text": "Brush again, rest briefly, and serve with lemon.", "seconds": 60 }
+      ],
+      "tags": ["Seafood", "Quick", "High Protein"]
+    },
+    {
+      "id": 5,
+      "title": "Mediterranean Quinoa Bowl",
+      "category": "Lunch",
+      "imageName": "recipe_quinoa_bowl",
+      "timeMinutes": 30,
+      "servings": 2,
+      "difficulty": "Easy",
+      "shortDescription": "Fresh veggies, feta, and quinoa with lemon dressing.",
+      "ingredients": [
+        "1 cup quinoa",
+        "Cherry tomatoes",
+        "Cucumber",
+        "Feta cheese",
+        "Olives",
+        "Olive oil, lemon juice"
+      ],
+      "steps": [
+        { "order": 1, "text": "Cook quinoa and let it cool slightly.", "seconds": 900 },
+        { "order": 2, "text": "Chop tomatoes and cucumber; slice olives.", "seconds": 300 },
+        { "order": 3, "text": "Mix lemon juice and olive oil for dressing.", "seconds": 60 },
+        { "order": 4, "text": "Combine everything and top with feta.", "seconds": 120 }
+      ],
+      "tags": ["Healthy", "Vegetarian", "Meal Prep"]
+    },
+    {
+      "id": 6,
+      "title": "Fluffy Pancakes",
+      "category": "Breakfast",
+      "imageName": "recipe_pancakes",
+      "timeMinutes": 20,
+      "servings": 2,
+      "difficulty": "Easy",
+      "shortDescription": "Soft, fluffy pancakes perfect with maple syrup.",
+      "ingredients": [
+        "1 cup flour",
+        "1 tbsp sugar",
+        "1 tsp baking powder",
+        "1 egg",
+        "1 cup milk",
+        "1 tbsp butter (melted)"
+      ],
+      "steps": [
+        { "order": 1, "text": "Whisk dry ingredients in a bowl.", "seconds": 60 },
+        { "order": 2, "text": "Whisk wet ingredients, then combine gently.", "seconds": 90 },
+        { "order": 3, "text": "Cook pancakes on a lightly oiled pan.", "seconds": 600 },
+        { "order": 4, "text": "Serve warm with syrup or fruit.", "seconds": 60 }
+      ],
+      "tags": ["Sweet", "Brunch", "Comfort"]
+    }
+  ]
+}
