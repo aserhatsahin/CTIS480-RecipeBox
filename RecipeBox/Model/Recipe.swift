@@ -6,34 +6,40 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-final class Recipe {
-    let id: String
+struct Recipe {
+    let id: Int
     let title: String
     let category: String
-    let durationMinutes: Int
-    let imageName: String
     let summary: String
+    let durationMinutes: Int
+    let servings: Int
     let ingredients: [String]
     let steps: [String]
-    
-    init(
-        id: String,
-        title: String,
-        category: String,
-        durationMinutes: Int,
-        imageName: String,
-        summary: String,
-        ingredients: [String],
-        steps: [String]
-    ) {
-        self.id = id
-        self.title = title
-        self.category = category
-        self.durationMinutes = durationMinutes
-        self.imageName = imageName
-        self.summary = summary
-        self.ingredients = ingredients
-        self.steps = steps
+    let imageName: String
+
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.title = json["title"].stringValue
+        self.category = json["category"].stringValue
+        self.summary = json["summary"].stringValue
+        self.durationMinutes = json["durationMinutes"].intValue
+        self.servings = json["servings"].intValue
+        self.ingredients = json["ingredients"].arrayValue.map { $0.stringValue }
+        self.steps = json["steps"].arrayValue.map { $0.stringValue }
+        self.imageName = json["imageName"].stringValue
+    }
+
+    /// JSON’da rating yok → deterministik mock.
+    var mockRating: Double {
+        // 4.5 - 4.9
+        let base = 45 + (id % 5) // 45..49
+        return Double(base) / 10.0
+    }
+
+    /// UI’da göstermek için "X min" stringi.
+    var durationText: String {
+        "\(durationMinutes) min"
     }
 }
