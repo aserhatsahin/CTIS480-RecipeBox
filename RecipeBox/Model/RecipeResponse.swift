@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+final class RecipeResponse {
+    var recipes: [Recipe]
+
+    init(recipes: [Recipe]) {
+        self.recipes = recipes
+    }
+}
