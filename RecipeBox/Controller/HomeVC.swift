@@ -7,8 +7,15 @@
 
 import UIKit
 
-final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+
+
+final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, RecipeDelegate {
+    func recipeDetails(recipe: Recipe) {
+    //
+    }
+    
+    var selectedRecipe: Recipe?
     @IBOutlet weak var collectionView: UICollectionView!
 
     let ds = RecipesDataSource()
@@ -24,7 +31,10 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
 
         collectionView.reloadData()
     }
-
+    @IBAction func unwindToMain(_ sender:UIStoryboardSegue) {
+        
+        
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ds.recipes.count
     }
@@ -63,7 +73,13 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
 
         return cell
     }
-
+ 
+    internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedRecipe = ds.recipes[indexPath.item]
+        performSegue(withIdentifier: "toRecipeDetailsSegue", sender: self)
+    }
+    
+    
     @objc private func favoriteTapped(_ sender: UIButton) {
         let index = sender.tag
         let recipe = ds.recipes[index]
@@ -73,7 +89,18 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+}
+extension HomeVC  {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecipeDetailsSegue" {
+            if let RPVC = segue.destination as? RecipeDetailsVC {
+                RPVC.delegate = self
+                RPVC.selectedRecipe=selectedRecipe
+            }
+        }
 
+     
     }
+    
+    
 }
