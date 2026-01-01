@@ -6,12 +6,20 @@
 //
 
 import UIKit
+protocol RecipeDelegate: AnyObject {
+    func recipeDetails(recipe: Recipe)
+}
+
 
 class RecipeDetailsVC: UIViewController {
 
+    @IBOutlet weak var recipeIMG: UIImageView!
+    var selectedRecipe: Recipe?
+    var delegate: RecipeDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        recipeIMG.image = UIImage(named: selectedRecipe!.imageName)
         // Do any additional setup after loading the view.
     }
     
