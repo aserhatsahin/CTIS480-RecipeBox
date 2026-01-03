@@ -7,8 +7,21 @@
       "summary": "Crispy toast topped with creamy avocado and a fresh finish.",
       "durationMinutes": 8,
       "servings": 1,
-      "ingredients": ["2 slices bread","1 ripe avocado","1 tsp lemon juice","Salt","Black pepper","Chili flakes (optional)","Olive oil (optional)"],
-      "steps": ["Toast the bread until golden and crispy.","Mash the avocado with lemon juice, salt, and pepper.","Spread the avocado mixture on toast.","Top with chili flakes and a tiny drizzle of olive oil if you want."],
+      "ingredients": [
+        { "amount": "2 slices", "name": "bread" },
+        { "amount": "1", "name": "ripe avocado" },
+        { "amount": "1 tsp", "name": "lemon juice" },
+        { "amount": "1/4 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" },
+        { "amount": "1/2 tsp", "name": "chili flakes (optional)" },
+        { "amount": "1 tsp", "name": "olive oil (optional)" }
+      ],
+      "steps": [
+        "Toast the bread until golden and crispy.",
+        "Mash the avocado with lemon juice, salt, and pepper.",
+        "Spread the avocado mixture on toast.",
+        "Top with chili flakes and a tiny drizzle of olive oil if you want."
+      ],
       "imageName": "avacado_toast"
     },
     {
@@ -18,8 +31,25 @@
       "summary": "Creamy Alfredo pasta with tender chicken.",
       "durationMinutes": 30,
       "servings": 2,
-      "ingredients": ["200g pasta (fettuccine or penne)","200g chicken breast","1 tbsp butter","2 cloves garlic","200ml cream","40g parmesan","Salt","Black pepper"],
-      "steps": ["Boil pasta in salted water and drain.","Season and cook chicken; slice it.","Melt butter, sauté garlic for 30 seconds.","Add cream, simmer 2-3 minutes, then mix in parmesan.","Combine pasta with sauce, add chicken on top and serve."],
+      "ingredients": [
+        { "amount": "200 g", "name": "pasta (fettuccine or penne)" },
+        { "amount": "200 g", "name": "chicken breast" },
+        { "amount": "1 tbsp", "name": "butter" },
+        { "amount": "2 cloves", "name": "garlic" },
+        { "amount": "200 ml", "name": "heavy cream" },
+        { "amount": "40 g", "name": "parmesan" },
+        { "amount": "1/2 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" },
+        { "amount": "1 tbsp", "name": "olive oil (optional)" },
+        { "amount": "1 tbsp", "name": "pasta water (reserved)" }
+      ],
+      "steps": [
+        "Boil pasta in salted water and drain (reserve a bit of pasta water).",
+        "Season and cook chicken; slice it.",
+        "Melt butter, sauté garlic for 30 seconds.",
+        "Add cream, simmer 2-3 minutes, then mix in parmesan.",
+        "Loosen with pasta water if needed, combine pasta with sauce, add chicken on top and serve."
+      ],
       "imageName": "chicken_alfredo"
     },
     {
@@ -29,8 +59,24 @@
       "summary": "Fresh, crunchy, and classic Mediterranean flavors.",
       "durationMinutes": 10,
       "servings": 2,
-      "ingredients": ["2 tomatoes (chopped)","1 cucumber (sliced)","1/2 red onion (thinly sliced)","1/2 cup olives","80g feta cheese","2 tbsp olive oil","1 tbsp lemon juice","Oregano","Salt","Black pepper"],
-      "steps": ["Chop tomatoes and cucumber, slice onion.","Add olives and crumble feta on top.","Mix olive oil, lemon juice, oregano, salt, pepper.","Pour dressing and toss gently."],
+      "ingredients": [
+        { "amount": "2", "name": "tomatoes (chopped)" },
+        { "amount": "1", "name": "cucumber (sliced)" },
+        { "amount": "1/2", "name": "red onion (thinly sliced)" },
+        { "amount": "1/2 cup", "name": "olives" },
+        { "amount": "80 g", "name": "feta cheese" },
+        { "amount": "2 tbsp", "name": "olive oil" },
+        { "amount": "1 tbsp", "name": "lemon juice" },
+        { "amount": "1/2 tsp", "name": "oregano" },
+        { "amount": "1/4 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" }
+      ],
+      "steps": [
+        "Chop tomatoes and cucumber, slice onion.",
+        "Add olives and crumble feta on top.",
+        "Mix olive oil, lemon juice, oregano, salt, pepper.",
+        "Pour dressing and toss gently."
+      ],
       "imageName": "greek_salad"
     },
     {
@@ -40,8 +86,23 @@
       "summary": "Quick single-serve chocolate cake made in a mug.",
       "durationMinutes": 7,
       "servings": 1,
-      "ingredients": ["4 tbsp flour","2 tbsp cocoa powder","2 tbsp sugar","1/4 tsp baking powder","3 tbsp milk","2 tbsp oil","1/4 tsp vanilla (optional)","Chocolate chips (optional)"],
-      "steps": ["Mix flour, cocoa, sugar, baking powder in a mug.","Add milk and oil, mix until smooth.","Add chocolate chips if you want.","Microwave 60-90 seconds (watch it so it doesn’t overflow)."],
+      "ingredients": [
+        { "amount": "4 tbsp", "name": "all-purpose flour" },
+        { "amount": "2 tbsp", "name": "cocoa powder" },
+        { "amount": "2 tbsp", "name": "sugar" },
+        { "amount": "1/4 tsp", "name": "baking powder" },
+        { "amount": "1 pinch", "name": "salt" },
+        { "amount": "3 tbsp", "name": "milk" },
+        { "amount": "2 tbsp", "name": "vegetable oil" },
+        { "amount": "1/4 tsp", "name": "vanilla (optional)" },
+        { "amount": "1 tbsp", "name": "chocolate chips (optional)" }
+      ],
+      "steps": [
+        "Mix flour, cocoa, sugar, baking powder, salt in a mug.",
+        "Add milk and oil, mix until smooth.",
+        "Add chocolate chips if you want.",
+        "Microwave 60-90 seconds (watch it so it doesn’t overflow)."
+      ],
       "imageName": "mug_cake"
     },
     {
@@ -51,8 +112,23 @@
       "summary": "Fluffy pancakes perfect with syrup and fruit.",
       "durationMinutes": 20,
       "servings": 2,
-      "ingredients": ["1 cup flour","1 tbsp sugar","1 tsp baking powder","1/2 tsp baking soda","Pinch of salt","1 cup milk","1 egg","1 tbsp melted butter"],
-      "steps": ["Mix dry ingredients in a bowl.","Whisk milk, egg, melted butter separately.","Combine wet + dry; don’t overmix (small lumps OK).","Cook on a lightly oiled pan: 2-3 minutes per side."],
+      "ingredients": [
+        { "amount": "1 cup", "name": "flour" },
+        { "amount": "1 tbsp", "name": "sugar" },
+        { "amount": "1 tsp", "name": "baking powder" },
+        { "amount": "1/2 tsp", "name": "baking soda" },
+        { "amount": "1 pinch", "name": "salt" },
+        { "amount": "1 cup", "name": "milk" },
+        { "amount": "1", "name": "egg" },
+        { "amount": "1 tbsp", "name": "melted butter" },
+        { "amount": "1 tsp", "name": "vanilla (optional)" }
+      ],
+      "steps": [
+        "Mix dry ingredients in a bowl.",
+        "Whisk milk, egg, melted butter (and vanilla) separately.",
+        "Combine wet + dry; don’t overmix (small lumps OK).",
+        "Cook on a lightly oiled pan: 2-3 minutes per side."
+      ],
       "imageName": "pancakes"
     },
     {
@@ -62,9 +138,170 @@
       "summary": "Smooth and comforting tomato soup.",
       "durationMinutes": 30,
       "servings": 3,
-      "ingredients": ["1 tbsp olive oil","1 onion (chopped)","2 cloves garlic","500g tomatoes (or 1 can crushed tomatoes)","2 cups vegetable/chicken stock","Salt","Black pepper","Cream (optional)"],
-      "steps": ["Sauté onion in olive oil until soft.","Add garlic, cook 30 seconds.","Add tomatoes and stock, simmer 15-20 minutes.","Blend until smooth, season with salt and pepper.","Optional: add a small splash of cream."],
+      "ingredients": [
+        { "amount": "1 tbsp", "name": "olive oil" },
+        { "amount": "1", "name": "onion (chopped)" },
+        { "amount": "2 cloves", "name": "garlic" },
+        { "amount": "500 g", "name": "tomatoes (or 1 can crushed tomatoes)" },
+        { "amount": "2 cups", "name": "vegetable/chicken stock" },
+        { "amount": "1/2 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" },
+        { "amount": "1/2 tsp", "name": "sugar (optional)" },
+        { "amount": "2 tbsp", "name": "cream (optional)" }
+      ],
+      "steps": [
+        "Sauté onion in olive oil until soft.",
+        "Add garlic, cook 30 seconds.",
+        "Add tomatoes and stock, simmer 15-20 minutes.",
+        "Blend until smooth, season with salt and pepper.",
+        "Optional: add a small splash of cream."
+      ],
       "imageName": "tomato_soup"
+    },
+
+    {
+      "id": 7,
+      "title": "Spaghetti Carbonara",
+      "category": "Dinner",
+      "summary": "Classic creamy carbonara without cream: eggs, cheese, and pancetta.",
+      "durationMinutes": 25,
+      "servings": 2,
+      "ingredients": [
+        { "amount": "200 g", "name": "spaghetti" },
+        { "amount": "100 g", "name": "pancetta (or bacon)" },
+        { "amount": "2", "name": "eggs" },
+        { "amount": "40 g", "name": "parmesan (or pecorino)" },
+        { "amount": "1/2 tsp", "name": "black pepper" },
+        { "amount": "1/4 tsp", "name": "salt" }
+      ],
+      "steps": [
+        "Cook spaghetti in salted water; reserve a bit of pasta water.",
+        "Pan-fry pancetta until crisp.",
+        "Whisk eggs, cheese, and pepper in a bowl.",
+        "Turn off heat, toss pasta with pancetta, then quickly mix in egg-cheese mixture.",
+        "Loosen with pasta water to make it glossy and serve."
+      ],
+      "imageName": "spaghetti_carbonara"
+    },
+    {
+      "id": 8,
+      "title": "Beef Tacos",
+      "category": "Dinner",
+      "summary": "Quick tacos with seasoned beef and fresh toppings.",
+      "durationMinutes": 20,
+      "servings": 2,
+      "ingredients": [
+        { "amount": "200 g", "name": "ground beef" },
+        { "amount": "6", "name": "taco shells (or small tortillas)" },
+        { "amount": "1 tsp", "name": "paprika" },
+        { "amount": "1/2 tsp", "name": "cumin" },
+        { "amount": "1/2 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" },
+        { "amount": "1/2 cup", "name": "lettuce (shredded)" },
+        { "amount": "1", "name": "tomato (diced)" },
+        { "amount": "1/4 cup", "name": "cheddar (grated)" }
+      ],
+      "steps": [
+        "Cook ground beef until browned.",
+        "Season with paprika, cumin, salt, pepper.",
+        "Warm taco shells/tortillas.",
+        "Fill with beef and toppings and serve."
+      ],
+      "imageName": "beef_tacos"
+    },
+    {
+      "id": 9,
+      "title": "Veggie Stir-Fry",
+      "category": "Dinner",
+      "summary": "Colorful vegetables with a simple soy-garlic sauce.",
+      "durationMinutes": 15,
+      "servings": 2,
+      "ingredients": [
+        { "amount": "1 tbsp", "name": "vegetable oil" },
+        { "amount": "1", "name": "bell pepper (sliced)" },
+        { "amount": "1", "name": "carrot (julienned)" },
+        { "amount": "1 cup", "name": "broccoli florets" },
+        { "amount": "1 cup", "name": "mushrooms (sliced)" },
+        { "amount": "2 tbsp", "name": "soy sauce" },
+        { "amount": "1 tsp", "name": "honey (optional)" },
+        { "amount": "1 clove", "name": "garlic (minced)" }
+      ],
+      "steps": [
+        "Heat oil in a pan.",
+        "Stir-fry veggies 5-7 minutes until crisp-tender.",
+        "Add soy sauce, garlic (and honey), toss for 1 minute.",
+        "Serve as-is or with rice/noodles."
+      ],
+      "imageName": "veggie_stir_fry"
+    },
+    {
+      "id": 10,
+      "title": "Caprese Sandwich",
+      "category": "Lunch",
+      "summary": "Fresh mozzarella, tomato, and basil with a drizzle of olive oil.",
+      "durationMinutes": 10,
+      "servings": 1,
+      "ingredients": [
+        { "amount": "2 slices", "name": "ciabatta (or bread)" },
+        { "amount": "2 slices", "name": "mozzarella" },
+        { "amount": "2 slices", "name": "tomato" },
+        { "amount": "4 leaves", "name": "fresh basil" },
+        { "amount": "1 tsp", "name": "olive oil" },
+        { "amount": "1/4 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" }
+      ],
+      "steps": [
+        "Layer mozzarella, tomato, and basil on bread.",
+        "Drizzle olive oil, season with salt and pepper.",
+        "Close sandwich and serve."
+      ],
+      "imageName": "caprese_sandwich"
+    },
+    {
+      "id": 11,
+      "title": "Banana Peanut Smoothie",
+      "category": "Drink",
+      "summary": "Creamy banana smoothie with peanut butter.",
+      "durationMinutes": 5,
+      "servings": 1,
+      "ingredients": [
+        { "amount": "1", "name": "banana" },
+        { "amount": "1 tbsp", "name": "peanut butter" },
+        { "amount": "1 cup", "name": "milk (or almond milk)" },
+        { "amount": "4", "name": "ice cubes" },
+        { "amount": "1 tsp", "name": "honey (optional)" }
+      ],
+      "steps": [
+        "Add everything to a blender.",
+        "Blend until smooth.",
+        "Serve immediately."
+      ],
+      "imageName": "banana_peanut_smoothie"
+    },
+    {
+      "id": 12,
+      "title": "Lentil Soup",
+      "category": "Soup",
+      "summary": "Hearty lentil soup with simple spices.",
+      "durationMinutes": 35,
+      "servings": 4,
+      "ingredients": [
+        { "amount": "1 cup", "name": "red lentils" },
+        { "amount": "1", "name": "onion (chopped)" },
+        { "amount": "1", "name": "carrot (chopped)" },
+        { "amount": "1 tbsp", "name": "olive oil" },
+        { "amount": "1 tsp", "name": "cumin" },
+        { "amount": "6 cups", "name": "water or stock" },
+        { "amount": "1 tsp", "name": "salt" },
+        { "amount": "1/4 tsp", "name": "black pepper" }
+      ],
+      "steps": [
+        "Sauté onion and carrot in olive oil 3-4 minutes.",
+        "Add lentils, cumin, water/stock.",
+        "Simmer 20-25 minutes until soft.",
+        "Blend slightly if you want it smoother, season and serve."
+      ],
+      "imageName": "lentil_soup"
     }
   ]
 }
