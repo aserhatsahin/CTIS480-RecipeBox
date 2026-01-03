@@ -10,6 +10,8 @@ import UIKit
 final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, RecipeDelegate {
     func recipeDetailsDidToggleFavorite(recipeId: Int) {
         //
+        loadFavorites()
+          collectionView.reloadData()
     }
     var selectedRecipe: Recipe?
     @IBOutlet weak var collectionView: UICollectionView!
@@ -44,7 +46,7 @@ final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedRecipe = ds.recipes[indexPath.item]
+        selectedRecipe = favoriteRecipes[indexPath.item]
         performSegue(withIdentifier: "favVCtoRecipeDetailsVC", sender: self)
     }
     func collectionView(_ collectionView: UICollectionView,
