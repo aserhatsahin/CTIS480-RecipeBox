@@ -1,13 +1,13 @@
 //
-//  SettingsVC.swift
+//  AboutVC.swift
 //  RecipeBox
 //
-//  Created by Ahmet Serhat Sahin on 23.12.2025.
+//  Created by Goksu Uzun on 03.01.2026.
 //
 
 import UIKit
 
-class SettingsVC: UIViewController {
+class AboutVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
