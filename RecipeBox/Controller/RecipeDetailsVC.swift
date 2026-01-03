@@ -1,7 +1,7 @@
 import UIKit
 
 protocol RecipeDelegate: AnyObject {
-    func recipeDetails(recipe: Recipe)
+    func recipeDetailsDidToggleFavorite(recipeId: Int)
 }
 
 final class RecipeDetailsVC: UIViewController {
@@ -10,12 +10,14 @@ final class RecipeDetailsVC: UIViewController {
     @IBOutlet weak var segmentedView: UISegmentedControl!
     @IBOutlet weak var recipeIMG: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-
+    @IBOutlet weak var mFavoriteBtn: UIButton!
+    
     var selectedRecipe: Recipe?
     weak var delegate: RecipeDelegate?
-
     private enum Mode { case ingredients, steps }
     private var mode: Mode = .ingredients
+    
+    private let favoritesStore = FavoritesStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +30,31 @@ final class RecipeDetailsVC: UIViewController {
         recipeIMG.image = UIImage(named: recipe.imageName)
         titleLabel.text = recipe.title
 
-        // ✅ storyboarddan bağladıysan bile güvenli olsun:
         recipeDetailsTableView.dataSource = self
         recipeDetailsTableView.delegate = self
 
-        // steps cell textView uzuyorsa lazım:
         recipeDetailsTableView.rowHeight = UITableView.automaticDimension
         recipeDetailsTableView.estimatedRowHeight = 80
 
         configureSegmented()
+        updateFavoriteIcon()
+    }
+    
+    private func updateFavoriteIcon() {
+        guard let recipe = selectedRecipe else { return }
+        let isFav = favoritesStore.isFavorite(id: recipe.id)
+        let heartName = isFav ? "heart.fill" : "heart"
+        mFavoriteBtn.setImage(UIImage(systemName: heartName), for: .normal)
+        mFavoriteBtn.tintColor = isFav ? .systemRed : .systemGray
+    }
+
+    @IBAction func favoriteTapped(_ sender: UIButton) {
+        guard let recipe = selectedRecipe else { return }
+
+        favoritesStore.toggleFavorite(id: recipe.id)
+        updateFavoriteIcon()
+
+        delegate?.recipeDetailsDidToggleFavorite(recipeId: recipe.id)
     }
 
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
@@ -71,7 +89,6 @@ extension RecipeDetailsVC: UITableViewDataSource, UITableViewDelegate {
                 for: indexPath
             ) as! CustomIngredientsCell
 
-            // ✅ artık split yok: direkt amount + name
             let ing = recipe.ingredients[indexPath.row]
             cell.amountLbl.text = ing.amount
             cell.ingredientLbl.text = ing.name

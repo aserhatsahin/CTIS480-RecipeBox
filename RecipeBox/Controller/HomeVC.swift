@@ -11,8 +11,12 @@ import UIKit
 
 
 final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, RecipeDelegate {
-    func recipeDetails(recipe: Recipe) {
-    //
+    func recipeDetailsDidToggleFavorite(recipeId: Int) {
+        if let index = ds.recipes.firstIndex(where: { $0.id == recipeId }) {
+            collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+        } else {
+            collectionView.reloadData()
+        }
     }
     
     var selectedRecipe: Recipe?
@@ -28,7 +32,6 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         collectionView.delegate = self
 
         ds.populateFromJSON()
-
         collectionView.reloadData()
     }
     
@@ -70,7 +73,9 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
 
         let isFav = favoritesStore.isFavorite(id: recipe.id)
         let heartName = isFav ? "heart.fill" : "heart"
+        let color: UIColor = isFav ? .systemRed : .systemGray
         cell.favoriteBtn.setImage(UIImage(systemName: heartName), for: .normal)
+        cell.favoriteBtn.tintColor = color
 
         cell.favoriteBtn.tag = indexPath.item
 

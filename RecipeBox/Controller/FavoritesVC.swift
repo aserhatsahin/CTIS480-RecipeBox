@@ -60,7 +60,7 @@ final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollect
         cell.recipeImg.image = UIImage(named: recipe.imageName)
 
         cell.favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-
+        cell.favoriteBtn.tintColor = .systemRed
         cell.favoriteBtn.tag = indexPath.item
         cell.favoriteBtn.removeTarget(nil, action: nil, for: .allEvents)
         cell.favoriteBtn.addTarget(self, action: #selector(unfavoriteTapped(_:)), for: .touchUpInside)
