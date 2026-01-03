@@ -12,6 +12,9 @@ final class RecipeDetailsVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
 
     var selectedRecipe: Recipe?
+    
+    
+    
     weak var delegate: RecipeDelegate?
 
     private enum Mode { case ingredients, steps }
@@ -24,21 +27,24 @@ final class RecipeDetailsVC: UIViewController {
             print("selectedRecipe is nil")
             return
         }
-
+    
         recipeIMG.image = UIImage(named: recipe.imageName)
         titleLabel.text = recipe.title
 
-        // ✅ storyboarddan bağladıysan bile güvenli olsun:
-        recipeDetailsTableView.dataSource = self
-        recipeDetailsTableView.delegate = self
+   
 
-        // steps cell textView uzuyorsa lazım:
+        
         recipeDetailsTableView.rowHeight = UITableView.automaticDimension
         recipeDetailsTableView.estimatedRowHeight = 80
 
         configureSegmented()
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCookingModeSegue",
+           let vc = segue.destination as? CookingModeVC {
+            vc.selectedRecipe = selectedRecipe
+        }
+    }
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
         mode = (sender.selectedSegmentIndex == 0) ? .ingredients : .steps
         recipeDetailsTableView.reloadData()
