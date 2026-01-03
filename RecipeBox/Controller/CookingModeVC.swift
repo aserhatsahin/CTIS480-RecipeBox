@@ -4,25 +4,25 @@ import AudioToolbox
 
 final class CookingModeVC: UIViewController {
 
-    // MARK: - Outlets (Storyboard)
+    
     @IBOutlet weak var stepsTableView: UITableView!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var restartTimerBtn: UIButton!
     @IBOutlet weak var startTimerBtn: UIButton!
     @IBOutlet weak var circularProgressView: CircularProgressView!
 
-    // (Opsiyonel) senin custom back buttonun varsa bağla
+    
     @IBOutlet weak var backBtn: UIButton?
 
-    // (Opsiyonel) Finish Cooking butonu eklediysen bağla
-    // TouchUpInside -> finishTapped
+    
+    
     @IBOutlet weak var finishBtn: UIButton?
 
-    // MARK: - Data
+    
     var selectedRecipe: Recipe?
     private var steps: [String] = []
 
-    // MARK: - Timer
+    
     private var timer: Timer?
     private var isRunning: Bool = false
     private var isDone: Bool = false
@@ -30,10 +30,10 @@ final class CookingModeVC: UIViewController {
     private var totalSeconds: Int = 1
     private var remainingSeconds: Int = 1
 
-    // MARK: - Sound (Custom önerilir)
+    
     private var audioPlayer: AVAudioPlayer?
 
-    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,7 +58,7 @@ final class CookingModeVC: UIViewController {
 
     // MARK: - UI
     private func setupButtonsUI() {
-        // Start button görünür olsun diye
+        
         startTimerBtn.tintColor = .white
         var config = startTimerBtn.configuration ?? .filled()
         config.baseBackgroundColor = .systemBlue
@@ -76,7 +76,7 @@ final class CookingModeVC: UIViewController {
     private func renderUI() {
         timeLbl.text = formatTime(remainingSeconds)
 
-        let progress = 1.0 - (Double(remainingSeconds) / Double(totalSeconds)) // 0..1
+        let progress = 1.0 - (Double(remainingSeconds) / Double(totalSeconds))
         circularProgressView.setProgress(CGFloat(progress), animated: true, duration: 0.2)
 
         updateStartButtonIcon()
@@ -103,7 +103,7 @@ final class CookingModeVC: UIViewController {
         config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 26, weight: .bold)
         startTimerBtn.configuration = config
 
-        // ekstra garanti
+        
         startTimerBtn.backgroundColor = isDone ? .systemGreen : .systemBlue
         startTimerBtn.tintColor = .white
     }
@@ -144,19 +144,18 @@ final class CookingModeVC: UIViewController {
         isRunning = false
         isDone = true
 
-        // Done olunca ring FULL olsun (finish butonuna erken bassan bile)
+        
         remainingSeconds = 0
 
-        // UI güncelle: ring 1.0 + checkmark
+        
         renderUI()
 
-        // Ses
+        
         playFinishSound()
     }
 
     // MARK: - Sound Ayarı
-    /// 1) Öncelik: custom ses dosyası (en güzel ve kontrol sende)
-    /// 2) Yoksa: sistem click sesi fallback
+   
     private func playFinishSound() {
         if let url = Bundle.main.url(forResource: "done", withExtension: "mp3") {
             do {
@@ -200,13 +199,13 @@ final class CookingModeVC: UIViewController {
         renderUI()
     }
 
-    // ✅ Finish Cooking (test veya manuel bitirme)
+  
     @IBAction func finishTapped(_ sender: UIButton) {
         guard !isDone else { return }
         finishCooking()
     }
 
-    // Custom back button bağladıysan bunu kullan
+
     @IBAction func backTapped(_ sender: UIButton) {
         stopTimer()
 
@@ -235,7 +234,6 @@ extension CookingModeVC: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
 
-        // Sabit görünüm: hepsi aynı
         cell.configure(
             stepText: steps[indexPath.row],
             stepNumber: indexPath.row + 1,
