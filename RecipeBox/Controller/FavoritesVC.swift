@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, RecipeDelegate {
+    func recipeDetailsDidToggleFavorite(recipeId: Int) {
+        //
+    }
+    var selectedRecipe: Recipe?
     @IBOutlet weak var collectionView: UICollectionView!
     let ds = RecipesDataSource()
     let favoritesStore = FavoritesStore()
@@ -39,6 +43,10 @@ final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollect
         favoriteRecipes.count
     }
     
+    internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedRecipe = ds.recipes[indexPath.item]
+        performSegue(withIdentifier: "favVCtoRecipeDetailsVC", sender: self)
+    }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -72,4 +80,14 @@ final class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollect
         loadFavorites()
         collectionView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "favVCtoRecipeDetailsVC" {
+            if let FavVC = segue.destination as? RecipeDetailsVC {
+                FavVC.delegate = self
+                FavVC.selectedRecipe=selectedRecipe
+            }
+        }
+    }
+   
 }

@@ -72,7 +72,13 @@ final class RecipeDetailsVC: UIViewController {
         
         delegate?.recipeDetailsDidToggleFavorite(recipeId: recipe.id)
     }
-    
+    @IBAction func backTapped(_ sender: UIButton) {
+        if let nav = navigationController {
+            nav.popViewController(animated: true)   // hangi ekrandan geldiysen ona döner (Favorites dahil)
+        } else {
+            dismiss(animated: true)                 // modalse
+        }
+    }
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
         mode = (sender.selectedSegmentIndex == 0) ? .ingredients : .steps
         recipeDetailsTableView.reloadData()

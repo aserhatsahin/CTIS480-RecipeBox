@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gua-5Z-026">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gua-5Z-026">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -254,7 +254,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="KRo-YJ-9x5" kind="unwind" unwindAction="unwindToMain:" id="MM8-v4-yKx"/>
+                                    <action selector="backTapped:" destination="lFH-Nl-2zv" eventType="touchUpInside" id="LrR-aF-B1y"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lqA-bt-975">
@@ -293,7 +293,7 @@
                                             <outlet property="ingredientLbl" destination="mgv-Ys-uuH" id="M4q-yz-l5v"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stepsCell" rowHeight="85" translatesAutoresizingMaskIntoConstraints="NO" id="gce-ZI-O8r" customClass="CustomStepsCell" customModule="RecipeBox" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stepsCell" rowHeight="85" translatesAutoresizingMaskIntoConstraints="NO" id="gce-ZI-O8r" customClass="CustomStepsCell" customModule="RecipeBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="373" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gce-ZI-O8r" id="bPq-5G-5rS">
@@ -422,7 +422,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EJ-CM-hvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="KRo-YJ-9x5" userLabel="Exit" sceneMemberID="exit"/>
                 <pinchGestureRecognizer id="HNF-MQ-fAN">
                     <connections>
                         <action selector="onGestureTriggered:" destination="lFH-Nl-2zv" id="blF-5Z-9Hw"/>
@@ -656,6 +655,7 @@
                     <navigationItem key="navigationItem" title="Favorites" style="browser" id="IeP-wX-sEX"/>
                     <connections>
                         <outlet property="collectionView" destination="bSd-vp-e1S" id="i3y-LG-gQ9"/>
+                        <segue destination="lFH-Nl-2zv" kind="show" identifier="favVCtoRecipeDetailsVC" id="YbZ-cA-66v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Oq-RB-QgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -939,11 +939,10 @@
         <!-- Favorites-->
         <scene sceneID="DsL-wB-9Iy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EiL-9D-BYt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EiL-9D-BYt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title=" Favorites" image="heart" catalog="system" selectedImage="heart" id="vqt-0P-rvj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HzQ-up-UiH">
-                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -975,12 +974,14 @@
             <point key="canvasLocation" x="2788.5496183206105" y="1109.8591549295775"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YbZ-cA-66v"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.counterclockwise" catalog="system" width="110" height="128"/>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chicken_alfredo" width="1500" height="1125"/>
         <image name="forward.end" catalog="system" width="128" height="112"/>
-        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="info" catalog="system" width="88" height="128"/>
