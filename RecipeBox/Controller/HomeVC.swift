@@ -31,6 +31,12 @@ final class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionVi
 
         collectionView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    
     @IBAction func unwindToMain(_ sender:UIStoryboardSegue) {
         
         
