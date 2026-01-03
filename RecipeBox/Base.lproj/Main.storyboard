@@ -471,7 +471,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ugr-oM-Jei">
                                         <rect key="frame" x="0.0" y="454.66666666666663" width="353" height="108.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Core Data, Gesture (RecipeDetailsVC), Sound (CookingModeVC), Delegate (RecipeDetailsVC), Table View, Collection View, Stack View, JSON Parsing (HomeVC), CocoaPods (for SwiftyJSON), MVC, Images with Different Sizes are Implemented in RecipeBox.</string>
+                                        <string key="text">Core Data, Gesture (RecipeDetailsVC), Sound (CookingModeVC), Delegate (RecipeDetailsVC), Table View, Collection View, Stack View, JSON Parsing (HomeVC), CocoaPods (for SwiftyJSON), MVC, Images with Different Sizes and App Icon are Implemented in RecipeBox.</string>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -980,7 +980,6 @@
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chicken_alfredo" width="1500" height="1125"/>
         <image name="forward.end" catalog="system" width="128" height="112"/>
-        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="info" catalog="system" width="88" height="128"/>
