@@ -19,6 +19,9 @@ final class RecipeDetailsVC: UIViewController {
     @IBOutlet weak var mFavoriteBtn: UIButton!
 
     var selectedRecipe: Recipe?
+    
+    
+    
     weak var delegate: RecipeDelegate?
     private enum Mode { case ingredients, steps }
     private var mode: Mode = .ingredients
@@ -42,6 +45,12 @@ final class RecipeDetailsVC: UIViewController {
         
         configureSegmented()
         updateFavoriteIcon()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCookingModeSegue",
+           let vc = segue.destination as? CookingModeVC {
+            vc.selectedRecipe = selectedRecipe
+        }
     }
     
     private func updateFavoriteIcon() {
