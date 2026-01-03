@@ -1,13 +1,16 @@
-//
-//  Recipe.swift
-//  RecipeBox
-//
-//  Created by Ahmet Serhat Sahin on 25.12.2025.
-//
-
-
 import Foundation
 import SwiftyJSON
+
+// ✅ Yeni model: ingredient artık obje
+struct Ingredient {
+    let amount: String
+    let name: String
+
+    init(json: JSON) {
+        self.amount = json["amount"].stringValue
+        self.name = json["name"].stringValue
+    }
+}
 
 struct Recipe {
     let id: Int
@@ -16,7 +19,7 @@ struct Recipe {
     let durationMinutes: Int
     let imageName: String
     let summary: String
-    let ingredients: [String]
+    let ingredients: [Ingredient]   // ✅ [String] yerine
     let steps: [String]
 
     init(json: JSON) {
@@ -26,7 +29,10 @@ struct Recipe {
         self.durationMinutes = json["durationMinutes"].intValue
         self.imageName = json["imageName"].stringValue
         self.summary = json["summary"].stringValue
-        self.ingredients = json["ingredients"].arrayValue.map { $0.stringValue }
+
+        // ✅ ingredients artık object array
+        self.ingredients = json["ingredients"].arrayValue.map { Ingredient(json: $0) }
+
         self.steps = json["steps"].arrayValue.map { $0.stringValue }
     }
 
